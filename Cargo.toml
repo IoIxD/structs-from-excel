@@ -2,6 +2,11 @@
 name = "structs-from-excel"
 version = "0.1.0"
 edition = "2021"
+description = "crate that adds a procedural macro that unravels structs via a given, purpose-formatted Excel spreadsheet"
+heompage = "https://github.com/IoIxD/structs-from-excel"
+repository = "https://github.com/IoIxD/structs-from-excel"
+license = "LICENSE.md"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
