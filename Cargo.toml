@@ -1,5 +1,5 @@
 [package]
-name = "objects-with-excel"
+name = "structs-from-excel"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,7 +7,6 @@ edition = "2021"
 
 [dependencies]
 calamine = "0.19.1"
-syn = "1.0.109"
 
 [lib]
 proc-macro = true
