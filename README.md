@@ -26,6 +26,14 @@ The following two sheets:
 become:
 
 ```
+    enum StructsFromExcel {
+        Slime(Slime),
+        OtherSlime(OtherSlime),
+        PlayerOne(PlayerOne),
+        PlayerTwo(PlayerTwo),
+        PlayerThree(PlayerThree),
+        PlayerFour(PlayerFour),
+    }
     pub struct Slime {
         pub hp: i32,
     }
