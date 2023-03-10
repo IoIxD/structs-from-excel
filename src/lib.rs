@@ -182,7 +182,7 @@ pub fn sheet(args: TokenStream, _input: TokenStream) -> TokenStream {
         }
     };
     s.write_str(format!("
-        enum StructsFromExcel {{
+        pub enum StructsFromExcel {{
     ").as_str());
     for struct_name in structs {
         s.write_str(format!("{s}({s}),",s=struct_name).as_str());

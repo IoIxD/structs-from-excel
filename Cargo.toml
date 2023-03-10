@@ -1,6 +1,6 @@
 [package]
 name = "structs-from-excel"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 description = "crate that adds a procedural macro that unravels structs via a given, purpose-formatted Excel spreadsheet"
 heompage = "https://github.com/IoIxD/structs-from-excel"
