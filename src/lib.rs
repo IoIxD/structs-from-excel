@@ -13,6 +13,7 @@ pub fn sheet(args: TokenStream, _input: TokenStream) -> TokenStream {
     // my code look worse in the name of making it "more proper"
     // (syn looks awful)
     let mut s: String = String::new();
+    let mut structs: Vec<String> = Vec::new();
     for arg in args.into_iter() {
         match arg {
             // only continue if given a string as an argument
@@ -35,6 +36,7 @@ pub fn sheet(args: TokenStream, _input: TokenStream) -> TokenStream {
                         a.worksheets()
                     },
                 };
+                
                 for workbook in workbooks {
                     let mut field_names: HashMap<i32, String> = HashMap::new();
                     let mut first_row = true;
@@ -164,6 +166,7 @@ pub fn sheet(args: TokenStream, _input: TokenStream) -> TokenStream {
                                             ",
                                         struct_name
                                     ).as_str());
+                                    structs.push(struct_name);
                                     break;
                                 }
                             }
@@ -178,6 +181,15 @@ pub fn sheet(args: TokenStream, _input: TokenStream) -> TokenStream {
             },
         }
     };
+    s.write_str(format!("
+        enum StructsFromExcel {{
+    ").as_str());
+    for struct_name in structs {
+        s.write_str(format!("{s}({s}),",s=struct_name).as_str());
+    }
+    s.write_str(format!("
+        }}
+    ").as_str());
     println!("Finished parsing the excel sheet.");
     s.parse().expect("Generated invalid tokens")
 }
